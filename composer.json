@@ -1,0 +1,29 @@
+{
+    "name": "nopaad/utilities",
+	"type": "library",
+	"description": "A collection of php utilities.",
+	"homepage": "https://github.com/nopaad/laravel-magfa-sms",
+    "description": "The Magfa SMS integration for Laravel 5.",
+    "keywords": ["laravel", "laravel5", "magfa", "sms", "api"],
+	"license": "GNU",
+    "authors": [
+        {
+			"name": "Aria Radmand",
+			"email": "radmand@nopaad.ir",
+			"homepage": "http://ariaa.net",
+			"role": "Developer"
+		}
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "5.*",
+		"artisaninweb/laravel-soap": "0.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nopaad\\Magfa\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
