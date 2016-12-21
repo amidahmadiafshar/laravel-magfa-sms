@@ -6,12 +6,12 @@ class SMS
 	public static function send($receipent_number)
 	{
 		$client = new GuzzleHttp\Client();
-		$response = $client->request('GET', \Config::get('magfa-sms.url'), [
+		$response = $client->request('GET', \Config::get('laravel-magfa-sms.php.url'), [
 			'service'      => [ 'enqueue' ],
-			'username'     => \Config::get('magfa-sms.username'),
-			'password'     => \Config::get('magfa-sms.password'),
-			'domain'       => \Config::get('magfa-sms.domain'),
-			'from'         => \Config::get('magfa-sms.from'),
+			'username'     => \Config::get('laravel-magfa-sms.php.username'),
+			'password'     => \Config::get('laravel-magfa-sms.php.password'),
+			'domain'       => \Config::get('laravel-magfa-sms.php.domain'),
+			'from'         => \Config::get('laravel-magfa-sms.php.from'),
 			'to'           => $receipent_number,
 			'message'      => 'Test Radmand',
 			'coding'       => '', // optional
