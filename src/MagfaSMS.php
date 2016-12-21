@@ -1,42 +1,24 @@
 <?php
-namespace nopaad\Magfa;
+namespace Nopaad\Magfa;
 class SMS
 {
 
-	private $credentials = [
-		'username'        => null,
-		'password'        => null,
-		'domain'          => null,
-		'url'             => null,
-		'error_max_value' => null,
-	];
-
-
-	public function __construct()
+	public static function send($receipent_number)
 	{
-		$credentials = collect($credentials);
-		if ($credentials->isEmpty() === false) {
-			$this->credentials = collect($credentials)->only([
-				'username',
-				'password',
-				'domain',
-				'url',
-				'error_max_value'
-			]);
-		} else {
-			$this->loadCredentialsFromConfig();
-		}
-	}
+		$client = new GuzzleHttp\Client();
+		$response = $client->request('GET', \Config::get('magfa-sms.url'), [
+			'service'      => [ 'enqueue' ],
+			'username'     => \Config::get('magfa-sms.username'),
+			'password'     => \Config::get('magfa-sms.password'),
+			'domain'       => \Config::get('magfa-sms.domain'),
+			'from'         => \Config::get('magfa-sms.from'),
+			'to'           => $receipent_number,
+			'message'      => 'Test Radmand',
+			'coding'       => '', // optional
+			'udh'          => '', // optional
+			'chkmessageid' => '', // optional
+		]);
 
-
-	protected function loadCredentialsFromConfig()
-	{
-		$this->credentials['username'] = config('laravel-magfa-sms.username');
-		$this->credentials['password'] = config('laravel-magfa-sms.password');
-		$this->credentials['domain'] = config('laravel-magfa-sms.domain');
-		$this->credentials['url'] = config('laravel-magfa-sms.url');
-		$this->credentials['error_max_value'] = config('laravel-magfa-sms.error_max_value');
-
-		return $this;
+		return $response;
 	}
 }

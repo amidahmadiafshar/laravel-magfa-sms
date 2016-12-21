@@ -1,5 +1,5 @@
 <?php
-namespace App\Providers;
+namespace Nopaad\Magfa;
 class MagfaMessagingServiceProvider extends \Illuminate\Support\ServiceProvider
 {
 
