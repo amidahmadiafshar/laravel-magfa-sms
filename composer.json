@@ -1,5 +1,5 @@
 {
-    "name": "nopaad/utilities",
+    "name": "nopaad/laravel-magfa-sms",
 	"type": "library",
 	"description": "A collection of php utilities.",
 	"homepage": "https://github.com/nopaad/laravel-magfa-sms",
