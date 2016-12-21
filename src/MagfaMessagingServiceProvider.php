@@ -1,28 +1,26 @@
 <?php
-
 namespace App\Providers;
-
-use Illuminate\Support\ServiceProvider;
-
-class MagfaMessagingServiceProvider extends ServiceProvider
+class MagfaMessagingServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
 
-    /**
-     * Register the application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
+	/**
+	 * Bootstrap the application services.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		//
+	}
+
+
+	/**
+	 * Register the application services.
+	 *
+	 * @return void
+	 */
+	public function register()
+	{
+		//
+	}
 }
