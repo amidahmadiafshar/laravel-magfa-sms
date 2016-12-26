@@ -11,7 +11,7 @@ class MagfaMessagingServiceProvider extends \Illuminate\Support\ServiceProvider
 	public function boot()
 	{
 		$this->publishes([
-			__DIR__.'/config/laravel-magfa-sms.php' => config_path('laravel-magfa-sms.php'),
+			__DIR__.'/../config/laravel-magfa-sms.php' => config_path('laravel-magfa-sms.php'),
 		]);
 	}
 
